@@ -5,46 +5,58 @@ import javax.validation.constraints.Pattern;
 
 public class SignupForm {
 
+	private Long id;
+	private String firstName;
+	private String lastName;
+	private String team;
 
-    private Long id;
-    private String firstName;
-    private String lastName;
+	@NotNull
+	@Pattern(regexp = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message = "Must be valid email address")
+	private String email;
+	
 
+	public String getFirstName() {
+		return firstName;
+	}
 
-    @NotNull
-    @Pattern(regexp = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", 
-    message = "Must be valid email address")
-    private String email;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
 
-    public String getFirstName() {
-        return firstName;
-    }
+	public String getLastName() {
+		return lastName;
+	}
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
 
-    public String getLastName() {
-        return lastName;
-    }
+	public String getEmail() {
+		return email;
+	}
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
-    public String getEmail() {
-        return email;
-    }
+	public Long getId() {
+		return id;
+	}
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public Long getId() {
-        return id;
-    }
+	public String getTeam() {
+		return team;
+	}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public void setTeam(String team) {
+		this.team = team;
+	}
+
+	
+
+	
+
 }
